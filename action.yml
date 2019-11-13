@@ -1,0 +1,16 @@
+name: 'Tagger'
+description: "Creates a tag output for the build, either a short commit sha or tag"
+inputs:
+  sha:
+    description: "Full Commit Sha"
+    required: true
+  head:
+    description: "Full reference/tag"
+    required: true
+    default: "nil"
+outputs:
+  tag:
+    description: "Tag to be used for building"
+runs:
+  using: 'node12'
+  main: 'main.ts'
