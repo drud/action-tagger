@@ -13,4 +13,4 @@ outputs:
     description: "Tag to be used for building"
 runs:
   using: 'node12'
-  main: 'main.ts'
+  main: 'lib/main.js'
