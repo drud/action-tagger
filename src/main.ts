@@ -1,7 +1,5 @@
 import * as core from '@actions/core';
-import {ParseTags} from './parser';
-
-
+import {ParseTags} from "./parser";
 
 
 async function run() {
