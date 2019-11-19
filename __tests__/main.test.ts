@@ -12,6 +12,10 @@ test('Gets Correct Ref',  () => {
       head: "refs/master",
       sha: "2aab82bas23bD",
       expect: "2aab82"
+   },{
+      head: "",
+      sha: "2bnasdfbSD*2badsg",
+      expect: "2bnasd"
    }];
 
    input.forEach( (element) => {
@@ -22,5 +26,9 @@ test('Gets Correct Ref',  () => {
 
 test('Check for bad Value', () => {
    expect(() => ParseTags('$GITHUB_REF', '$GITHUB_HEAD')).toThrowError();
+});
+
+test('Check for empty sha', () => {
+   expect(() => ParseTags('', '')).toThrowError();
 });
 
