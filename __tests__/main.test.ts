@@ -24,10 +24,6 @@ test('Gets Correct Ref',  () => {
 
 });
 
-test('Check for bad Value', () => {
-   expect(() => ParseTags('$GITHUB_REF', '$GITHUB_HEAD')).toThrowError();
-});
-
 test('Check for empty sha', () => {
    expect(() => ParseTags('', '')).toThrowError();
 });
