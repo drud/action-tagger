@@ -1,11 +1,12 @@
 import * as core from '@actions/core';
+import * as process from 'process';
 import {ParseTags} from "./parser";
 
 
 async function run() {
     try {
-        const head = core.getInput("head");
-        const sha = core.getInput("sha");
+        const head = process.env['GITHUB_HEAD'];
+        const sha = process.env['GITHUB_REF'];
         console.log(`Head ${head} and sha ${sha}`);
         core.setOutput('tag', ParseTags(head, sha));
     } catch (error) {
